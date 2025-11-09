@@ -1,0 +1,207 @@
+{
+  "yaakVersion": "2025.8.2",
+  "yaakSchema": 4,
+  "timestamp": "2025-11-09T15:16:23.592901",
+  "resources": {
+    "workspaces": [
+      {
+        "model": "workspace",
+        "id": "wk_LTmC9phBLp",
+        "createdAt": "2025-10-21T14:00:48.010354700",
+        "updatedAt": "2025-11-09T15:13:49.244946900",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "IXC",
+        "encryptionKeyChallenge": null,
+        "settingValidateCertificates": true,
+        "settingFollowRedirects": true,
+        "settingRequestTimeout": 0
+      }
+    ],
+    "environments": [],
+    "folders": [
+      {
+        "model": "folder",
+        "id": "fl_5LwUWvPEmk",
+        "createdAt": "2025-11-08T01:42:17.097677100",
+        "updatedAt": "2025-11-09T15:14:56.279636400",
+        "workspaceId": "wk_LTmC9phBLp",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "IXC",
+        "sortPriority": 0.0
+      }
+    ],
+    "httpRequests": [
+      {
+        "model": "http_request",
+        "id": "rq_bAzUZFvaV7",
+        "createdAt": "2025-11-09T13:04:50.465355800",
+        "updatedAt": "2025-11-09T15:12:34.682857200",
+        "workspaceId": "wk_LTmC9phBLp",
+        "folderId": "fl_5LwUWvPEmk",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"name\": \"Jesus Millan\",\n  \"cpf_cnpj\": \"02929864915\",\n  \"email\": \"jmillan@clent.cl\",\n  \"password\": \"secret123\",\n  \"type\": \"comun\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Accept",
+            "value": "application/json",
+            "id": "pqSPvvAxpa"
+          },
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "mfBfCKwn2e"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "kErkivQAWA"
+          }
+        ],
+        "method": "POST",
+        "name": "register",
+        "sortPriority": 10333.335333333333,
+        "url": "http://localhost:8000/api/register",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_eLWXaYiXiF",
+        "createdAt": "2025-11-09T11:18:26.809870500",
+        "updatedAt": "2025-11-09T14:50:12.414028500",
+        "workspaceId": "wk_LTmC9phBLp",
+        "folderId": "fl_5LwUWvPEmk",
+        "authentication": {
+          "token": "2|D0sOzwUZWA9VBfyN87noircAq9pYfUcUaMCwPnck7eae195f"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": "{\n  \"remitter_id\": 4,\n  \"receiver_id\": 3,\n  \"amount\": 100\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "fVZAmksErQ"
+          },
+          {
+            "enabled": true,
+            "name": "Accept",
+            "value": "application/json",
+            "id": "2NpQf5WPDH"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "IHHnMvumF6"
+          }
+        ],
+        "method": "POST",
+        "name": "transfer",
+        "sortPriority": 10333.336433333332,
+        "url": "http://localhost:8000/api/transfer",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_2UNxoMEwke",
+        "createdAt": "2025-11-08T02:07:53.173489500",
+        "updatedAt": "2025-11-09T14:50:03.670728400",
+        "workspaceId": "wk_LTmC9phBLp",
+        "folderId": "fl_5LwUWvPEmk",
+        "authentication": {
+          "token": "1|l3UCTUuB29Q422py5oR7R3RtRkOTGc3Rs2S1SDAo615fc5ad"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Accept",
+            "value": "application/json",
+            "id": "zX3a5SYzC0"
+          },
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "Kc83s99Dkm"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "ET8JRZE4C7"
+          }
+        ],
+        "method": "GET",
+        "name": "user/:id/balance",
+        "sortPriority": 10333.335433333332,
+        "url": "http://localhost:8000/api/users/4/balance",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_PPdCG7uKsZ",
+        "createdAt": "2025-11-08T01:42:25.316552600",
+        "updatedAt": "2025-11-09T14:44:11.340387200",
+        "workspaceId": "wk_LTmC9phBLp",
+        "folderId": "fl_5LwUWvPEmk",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"email\": \"comun@demo.com\",\n  \"password\": \"secret123\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Accept",
+            "value": "application/json",
+            "id": "pqSPvvAxpa"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "phy5mi5Wr3"
+          },
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "mfBfCKwn2e"
+          }
+        ],
+        "method": "POST",
+        "name": "login",
+        "sortPriority": 10333.334333333332,
+        "url": "http://localhost:8000/api/login",
+        "urlParameters": []
+      }
+    ],
+    "grpcRequests": [],
+    "websocketRequests": []
+  }
+}
