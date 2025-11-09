@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pagos_app
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/var/www/html
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - pagos_net
+
+  db:
+    image: mysql:8.0
+    container_name: pagos_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: pagos
+      MYSQL_USER: pagos_user
+      MYSQL_PASSWORD: pagos_pass
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - pagos_net
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: pagos_mailhog
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    networks:
+      - pagos_net
+
+volumes:
+  db_data:
+
+networks:
+  pagos_net:
+    driver: bridge
