@@ -29,20 +29,6 @@ class TransactionController extends Controller
             (float)$data['amount']
         );
 
-        // $payload = [
-        //   'remitente' => User::select('name', 'cpf_cnpj', 'email', 'type', 'balance')->find($data['remitter_id'])
-        // ];
-        
-        
-
-        // $authorized = $this->authorize->authorize($payload);
-
-        // if (! $authorized) {
-        //     DB::rollBack();
-        //     $result->message = 'Transferencia no autorizada';
-        //     return $result;
-        // }
-
         DB::commit();
         $statusCode = $tx->status === 'exito' ? 201 : 400;
         return response()->json($tx, $statusCode);
